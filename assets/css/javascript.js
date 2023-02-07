@@ -6,10 +6,24 @@ var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
 
 var searchStock = document.querySelector ("#searchStocks");
 
-// Create a function to pull data from search button using the API
-searchForm.addEventListener("submit", function(event) {
+var ticker = document.querySelector('#search-input');
+
+var searchForm = document.querySelector('#search-form');
+
+// Create a function to pull data from search button using the API ***USE ACT 24***
+let stockTicker = function(event) {
     event.preventDefault();
-    console.log (searchStock.value);
+    let search=ticker.value;
+        if (search){
+            console.log("hello");
+        }
+    
+    console.log(search)
+}ß
+
+searchForm.addEventListener("click", stockTicker)
+
+    // event.preventDefault();
 
     fetch (
         `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${ticker}&apiid=${newsApiKey}`
@@ -23,7 +37,6 @@ searchForm.addEventListener("submit", function(event) {
         getStock(data);
     })
     .catch();
-});
 
 
 
@@ -37,4 +50,4 @@ searchForm.addEventListener("submit", function(event) {
 // use local storage to save watchlist stocks 
  
 // Create a function for populating news articles 
-// Create a button that takes you to news articles 
+// Create a button that takes you to news articles
