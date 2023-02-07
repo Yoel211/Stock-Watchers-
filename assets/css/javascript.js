@@ -1,1 +1,40 @@
-// stocks are cool
+// Create variable for news API/ alphavantage
+var newsApiKey = "Y05JOHE1Z7ATCKW7"
+// Create variables for ticker and price API/ Finhub
+var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
+var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
+
+var searchStock = document.querySelector ("#searchStocks");
+
+// Create a function to pull data from search button using the API
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    console.log (searchStock.value);
+
+    fetch (
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${ticker}&apiid=${newsApiKey}`
+    )
+
+    .then (function(response) {
+        return response.json();
+    })
+    .then(function (data){
+        console.log ('first stock', date)
+        getStock(data);
+    })
+    .catch();
+});
+
+
+
+
+
+
+
+// Create event listeners for the search
+
+// Use a fetch call to gather information from the API
+// use local storage to save watchlist stocks 
+ 
+// Create a function for populating news articles 
+// Create a button that takes you to news articles 
