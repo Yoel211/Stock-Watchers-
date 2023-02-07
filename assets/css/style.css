@@ -10,27 +10,29 @@ body {
     background-color: blueviolet;
 }
 
-.header {
+header {
     background-color: lightseagreen;
     color: black;
     text-align: left;
-    /* display: inline-block; */
-    font-size: 48px; 
+    font-size: 40px; 
     display: flex;
     flex-direction: column;
-    
-    
-    
 }
-nav { 
-    margin-right: 20px;
-    padding: 20px;
-    clear: both;
-    float: left;
-    width: 30%;
-    height: 10%;
-    font-family: cursive;
-    /* background-color: #2589bd; */
-    
+
+.p-1 {
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    margin-bottom: 10px;
+    padding: 40px;
+    padding-top: 20px;
+    height: 100px;
+    text-align: center;
+}
+
+.text-primary {
+    margin-bottom: 5px;
 
 }
+
+
