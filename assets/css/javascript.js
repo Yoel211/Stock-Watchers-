@@ -3,8 +3,9 @@ var newsApiKey = "Y05JOHE1Z7ATCKW7"
 // Create variables for ticker and price API/ Finhub
 var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
 var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
-
+var searchForm = document.querySelector(".searchform")
 var searchStock = document.querySelector ("#searchStocks");
+
 
 // Create a function to pull data from search button using the API
 searchForm.addEventListener("submit", function(event) {
@@ -12,7 +13,7 @@ searchForm.addEventListener("submit", function(event) {
     console.log (searchStock.value);
 
     fetch (
-        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${ticker}&apiid=${newsApiKey}`
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${searchStock.value}&apiid=${newsApiKey}`
     )
 
     .then (function(response) {
@@ -20,7 +21,7 @@ searchForm.addEventListener("submit", function(event) {
     })
     .then(function (data){
         console.log ('first stock', date)
-        getStock(data);
+        //getStock(data);
     })
     .catch();
 });
