@@ -19,7 +19,7 @@ let stockTicker = function(event) {
         }
     
     console.log(search)
-}ß
+}
 
 searchForm.addEventListener("click", stockTicker)
 
@@ -37,11 +37,6 @@ searchForm.addEventListener("click", stockTicker)
         getStock(data);
     })
     .catch();
-
-
-
-
-
 
 
 // Create event listeners for the search
