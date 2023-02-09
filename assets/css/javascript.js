@@ -47,7 +47,7 @@ fetch (
         getStock(data);
     })
     .catch();
-}
+
 
 // Create event listeners for the search
 searchForm.addEventListener("click", stockTicker)
