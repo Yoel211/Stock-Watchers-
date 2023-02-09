@@ -3,47 +3,63 @@ var newsApiKey = "Y05JOHE1Z7ATCKW7"
 // Create variables for ticker and price API/ Finhub
 var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
 var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
-var searchForm = document.querySelector(".searchform")
+var searchForm = document.querySelector("#search-form")
 var searchStock = document.querySelector ("#searchStocks");
 
-
+var lsSearches = [];
 
 var ticker = document.querySelector('#search-input');
 
 var searchForm = document.querySelector('#search-form');
 
 // Create a function to pull data from search button using the API ***USE ACT 24***
-let stockTicker = function(event) {
+searchForm.addEventListener("click", function(event) {
     event.preventDefault();
-    let search=ticker.value;
-        if (search){
-            console.log("hello");
-        }
-    
-    console.log(search)
-}ß
+    console.log (searchForm.value);
 
-searchForm.addEventListener("click", stockTicker)
+    lsSearches.push(searchForm.value);
+    localStorage.setItem("Recent Searches", JSON.stringify(lsSearches));
+
+    fetch(
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${searchForm.value}&apiid=${newsApiKey}`
+    )
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('FIRST RESPONSE', data);
+    getStock (data);
+
+    })
+    .catch();
+})
+
+// let stockTicker = function(event) {
+//     event.preventDefault();
+//     let search=ticker.value;
+//         if (search){
+//             console.log("hello");
+//         }
+    
+//     console.log(search)
+// }
+
+// searchForm.addEventListener("click", stockTicker)
 
     // event.preventDefault();
 
-    fetch (
-        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${searchStock.value}&apiid=${newsApiKey}`
-    )
+    // fetch (
+    //     `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${searchStock.value}&apiid=${newsApiKey}`
+    // )
 
-    .then (function(response) {
-        return response.json();
-    })
-    .then(function (data){
-        console.log ('first stock', date)
-        //getStock(data);
-    })
-    .catch();
-
-
-
-
-
+    // .then (function(response) {
+    //     return response.json();
+    // })
+    // .then(function (data){
+    //     console.log ('first stock', data)
+    //     //getStock(data);
+    // })
+    // .catch();
 
 
 // Create event listeners for the search
