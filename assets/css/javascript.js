@@ -21,8 +21,20 @@ let stockTicker = function(event) {
     console.log(search)
 }
 
-// event.preventDefault();
+// Gets Price Data for Stocks
+fetch (
+    `https://finnhub.io/api/v1/quote?symbol=${search}&token=${priceApiKey}`
+    )
+    .then (function(response) {
+        return response.json();
+    })
+    .then(function (data){
+        console.log ('first stock', data)
+        getStock(data);
+    })
+    .catch();
 
+// Pulls News data for stock ticker
 fetch (
     `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${search}&apikey=${newsApiKey}`
     )
@@ -35,12 +47,14 @@ fetch (
         getStock(data);
     })
     .catch();
-
+}
 
 // Create event listeners for the search
+searchForm.addEventListener("click", stockTicker)
+
 
 // Use a fetch call to gather information from the API
 // use local storage to save watchlist stocks 
- 
+
 // Create a function for populating news articles 
 // Create a button that takes you to news articles
