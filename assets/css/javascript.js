@@ -1,16 +1,20 @@
 // Create variable for news API/ alphavantage
-var newsApiKey = "Y05JOHE1Z7ATCKW7"
+var newsApiKey = "Y05JOHE1Z7ATCKW7";
 // Create variables for ticker and price API/ Finhub
-var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
-var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0"
+var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
+var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
+var searchForm = document.querySelector("#search-form");
+var searchStock = document.querySelector("#searchStocks");
 
 var searchStock = document.querySelector("#searchStocks");
 
-var ticker = document.querySelector('#search-input');
 
-var searchForm = document.querySelector('#search-button');
+var ticker = document.querySelector("#search-input");
+
+var searchForm = document.querySelector("#search-button");
 
 // Create a function to pull data from search button using the API ***USE ACT 24***
+
 let stockTicker = function (event) {
     event.preventDefault();
     let search = ticker.value;
@@ -62,11 +66,10 @@ let stockTicker = function (event) {
 }
 
 // Create event listeners for the search
-searchForm.addEventListener("click", stockTicker)
-
+searchForm.addEventListener("click", stockTicker);
 
 // Use a fetch call to gather information from the API
-// use local storage to save watchlist stocks 
+// use local storage to save watchlist stocks
 
-// Create a function for populating news articles 
+// Create a function for populating news articles
 // Create a button that takes you to news articles
