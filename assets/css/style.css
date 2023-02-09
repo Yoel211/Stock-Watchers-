@@ -17,13 +17,13 @@ header {
     flex-direction: column;
 }
 .p-1 {
-    flex-direction: column;
+    flex-direction:column;
     color: white;
     background-color: black;
     margin-bottom: 10px;
     padding: 40px;
     padding-top: 20px;
-    height: 100px;
+    height: 140px;
     text-align: center;
 }
 .text-primary {
@@ -36,4 +36,8 @@ input#search-input {
 }
 footer {
     background-color: lightseagreen;
+}
+
+.left-col-1 {
+    font-size:2ch;
 }
