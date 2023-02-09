@@ -43,7 +43,7 @@ let stockTicker = function (event) {
             return response.json();
         })
         .then(function (data) {
-            console.log('first stock', data)
+            console.log('stock price', data)
             getStock(data);
         })
         .catch();
@@ -57,7 +57,7 @@ let stockTicker = function (event) {
             return response.json();
         })
         .then(function (data) {
-            console.log('first stock', data)
+            console.log('stock news', data)
             getStock(data);
         })
         .catch();
