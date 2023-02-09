@@ -10,62 +10,53 @@ var lsSearches = [];
 
 var ticker = document.querySelector('#search-input');
 
-var searchForm = document.querySelector('#search-form');
+var searchForm = document.querySelector('#search-button');
 
 // Create a function to pull data from search button using the API ***USE ACT 24***
 searchForm.addEventListener("click", function(event) {
     event.preventDefault();
-    console.log (searchForm.value);
+    let search=ticker.value;
+        if (search){
+            console.log("hello");
+        }
+    
+    console.log(search)
+}
 
-    lsSearches.push(searchForm.value);
-    localStorage.setItem("Recent Searches", JSON.stringify(lsSearches));
-
-    fetch(
-        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${searchForm.value}&apiid=${newsApiKey}`
+// Gets Price Data for Stocks
+fetch (
+    `https://finnhub.io/api/v1/quote?symbol=${search}&token=${priceApiKey}`
     )
-    .then(function(response) {
+    .then (function(response) {
         return response.json();
     })
-    .then(function(data) {
-        console.log('FIRST RESPONSE', data);
-    getStock (data);
-
+    .then(function (data){
+        console.log ('first stock', data)
+        getStock(data);
     })
     .catch();
-})
 
-// let stockTicker = function(event) {
-//     event.preventDefault();
-//     let search=ticker.value;
-//         if (search){
-//             console.log("hello");
-//         }
-    
-//     console.log(search)
-// }
+// Pulls News data for stock ticker
+fetch (
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${search}&apikey=${newsApiKey}`
+    )
 
-// searchForm.addEventListener("click", stockTicker)
-
-    // event.preventDefault();
-
-    // fetch (
-    //     `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${searchStock.value}&apiid=${newsApiKey}`
-    // )
-
-    // .then (function(response) {
-    //     return response.json();
-    // })
-    // .then(function (data){
-    //     console.log ('first stock', data)
-    //     //getStock(data);
-    // })
-    // .catch();
+    .then (function(response) {
+        return response.json();
+    })
+    .then(function (data){
+        console.log ('first stock', date)
+        getStock(data);
+    })
+    .catch();
 
 
 // Create event listeners for the search
+searchForm.addEventListener("click", stockTicker)
+
 
 // Use a fetch call to gather information from the API
 // use local storage to save watchlist stocks 
- 
+
 // Create a function for populating news articles 
 // Create a button that takes you to news articles
