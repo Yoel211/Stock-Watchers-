@@ -8,39 +8,36 @@ var searchStock = document.querySelector ("#searchStocks");
 
 var ticker = document.querySelector('#search-input');
 
-var searchForm = document.querySelector('#search-form');
+var searchForm = document.querySelector('#search-button');
 
 // Create a function to pull data from search button using the API ***USE ACT 24***
 let stockTicker = function(event) {
     event.preventDefault();
     let search=ticker.value;
         if (search){
-            console.log("hello");
+            console.log();
         }
     
     console.log(search)
-}
 
-searchForm.addEventListener("click", stockTicker)
+// event.preventDefault();
 
-    // event.preventDefault();
-
-    fetch (
-        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${ticker}&apiid=${newsApiKey}`
+fetch (
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${search}&apikey=${newsApiKey}`
     )
-
+    
     .then (function(response) {
         return response.json();
     })
     .then(function (data){
-        console.log ('first stock', date)
+        console.log ('first stock', data)
         getStock(data);
     })
     .catch();
-
-
-// Create event listeners for the search
-
+}
+    // Create event listeners for the search
+    
+   searchForm.addEventListener("click", stockTicker)
 // Use a fetch call to gather information from the API
 // use local storage to save watchlist stocks 
  
