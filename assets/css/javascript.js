@@ -6,46 +6,64 @@ var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
 var searchForm = document.querySelector("#search-form");
 var searchStock = document.querySelector("#searchStocks");
 
-var lsSearches = [];
+var searchStock = document.querySelector("#searchStocks");
+
 
 var ticker = document.querySelector("#search-input");
 
 var searchForm = document.querySelector("#search-button");
 
 // Create a function to pull data from search button using the API ***USE ACT 24***
-searchForm.addEventListener("click", function (event) {
-  event.preventDefault();
-  let search = ticker.value;
-  if (search) {
-    console.log();
-  }
 
-  console.log(search);
+let stockTicker = function (event) {
+    event.preventDefault();
+    let search = ticker.value;
+    if (search) {
+        console.log();
+    }
 
-  // Gets Price Data for Stocks
-  fetch(`https://finnhub.io/api/v1/quote?symbol=${search}&token=${priceApiKey}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log("first stock", data);
-      getStock(data);
-    })
-    .catch();
+    console.log(search)
 
-  // Pulls News data for stock ticker
-  fetch(
-    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${search}&apikey=${newsApiKey}`
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log("first stock", data);
-      getStock(data);
-    })
-    .catch();
-});
+    // Stock Name Data for stocks
+    fetch(
+        `https://finnhub.io/api/v1/search?q=${search}&token=${tickerApiKey}`
+    )
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log('first stock', data)
+            getStock(data);
+        })
+        .catch();
+
+    // Gets Price Data for Stocks
+    fetch(
+        `https://finnhub.io/api/v1/quote?symbol=${search}&token=${priceApiKey}`
+    )
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log('first stock', data)
+            getStock(data);
+        })
+        .catch();
+
+    // Pulls News data for stock ticker
+    fetch(
+        `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${search}&apikey=${newsApiKey}`
+    )
+
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log('first stock', data)
+            getStock(data);
+        })
+        .catch();
+}
 
 // Create event listeners for the search
 searchForm.addEventListener("click", stockTicker);
