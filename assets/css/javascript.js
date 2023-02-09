@@ -33,10 +33,10 @@ searchForm.addEventListener("click", stockTicker)
         return response.json();
     })
     .then(function (data){
-        console.log ('first stock', date)
+        console.log ('first stock', data)
         getStock(data);
     })
-    .catch();
+    .catch()
 
 
 // Create event listeners for the search
