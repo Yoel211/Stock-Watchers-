@@ -8,13 +8,11 @@ var searchStock = document.querySelector("#searchStocks");
 
 var searchStock = document.querySelector("#searchStocks");
 
-
 var ticker = document.querySelector("#search-input");
 
 var searchForm = document.querySelector("#search-button");
 
 // Create a function to pull data from search button using the API ***USE ACT 24***
-
 let stockTicker = function (event) {
     event.preventDefault();
     let search = ticker.value;
