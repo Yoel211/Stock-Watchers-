@@ -21,7 +21,7 @@ searchForm.addEventListener("click", function(event) {
         }
     
     console.log(search)
-}
+})
 
 // Gets Price Data for Stocks
 fetch (
