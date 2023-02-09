@@ -4,12 +4,10 @@
     padding: 0;
     margin: 0;
 }
-
 body {
     font-family: sans-serif;
     background-color: blueviolet;
 }
-
 header {
     background-color: lightseagreen;
     color: black;
@@ -18,7 +16,6 @@ header {
     display: flex;
     flex-direction: column;
 }
-
 .p-1 {
     flex-direction: column;
     color: white;
@@ -29,11 +26,14 @@ header {
     height: 100px;
     text-align: center;
 }
-
 .text-primary {
     margin-bottom: 5px;
     padding-left: 5px;
-
 }
-
-
+input#search-input {
+    background-color: #fff;
+    max-width: 300px;
+}
+footer {
+    background-color: lightseagreen;
+}
