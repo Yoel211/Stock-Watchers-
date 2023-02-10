@@ -1,63 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- Import Materialize CSS framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Stock Watchers!</title>
-</head>
-<body class="bg-light flex-column">
+  </head>
+  <body class="bg-light flex-column">
     <header>
-        <h1> Stock Watchers! </h1><i class="large material-icons">insert_chart</i>
+      <h1>Stock Watchers!</h1>
+      <i class="large material-icons">insert_chart</i>
     </header>
-    <!-- Moved the watch list to the top so it can be on the top left and downward -->
-    <div class="watch-list left-col-1">
-        <aside>
-        <h3>Your Watch List</h3>
-        <p>This will be the div for the saved watchlist. It will be a column on the left side.</p>
-        </aside>
-    </div> 
-    <div class="container">
-    <div class="p-1" >
-        <p>Welcome to Stock Watchers! We are here to help create your watchlist for all your favorite stocks. We will keep the stocks you have searched in your watchlist for you. Feel free to click back in and take a look at them any time. When you go to search we will show you the current stock price and 5 latests news articles.</p>
-    </div>
-    <div class="watch-list left-col-1">
-    </div> 
-    <div class="">
-        <div class="col-12 col-md-3 bg-light p-3">
-            <h2 class="text-primary">Stock Watchers Search Engine</h2>
+
+    <div class="row">
+      <div class="watch-list col s2">
+        <h4>Your Watch List</h4>
+        <p>
+          This will be the div for the saved watchlist. It will be a column on
+          the left side.
+        </p>
+      </div>
+
+      <div class="col s9">
+
+        <div class="col-12 col-md-3 bg-light p-3 col s6">
+            <h4 class="text-primary">Stock Watchers Search Engine</h4>
             <form id="search-form" class="mb-2">
-                <input id="search-input" type="text" placeholder="Search!">
-                <button class="btn btn-info btn-block" id="search-button">Search<i class="material-icons right">send</i></button>
+              <input id="search-input" type="text" placeholder="Search!" />
+              <button class="btn btn-info btn-block" id="search-button">
+                Search<i class="material-icons right">send</i>
+              </button>
             </form>
+          </div>
+
+        <div class="p-1 col s6">
+          <p>
+            Welcome to Stock Watchers! We are here to help create your watchlist
+            for all your favorite stocks. We will keep the stocks you have
+            searched in your watchlist for you. Feel free to click back in and
+            take a look at them any time. When you go to search we will show you
+            the current stock price and 5 latests news articles.
+          </p>
         </div>
-    </div>
-    <div class="current-prices">
+
+      </div><!-- end col s9 -->
+    </div><!-- end row -->
+
+    <div class="row">
+      <div class="current-prices col s9 offset-s3">
         <p>This will be the div of where we show the Stock Tick and prices</p>
         <p id="symbol"></p>
-        <i class="small material-icons">attach_money</i><p id="currentP"></p>
-        <i class="small material-icons">trending_up</i><p id="highP"></p>
-        <i class="small material-icons">trending_down</i><p id="lowP"></p>
-        <i class="small material-icons">add_alert</i><p id="openP"></p>
-        <i class="small material-icons">access_time</i><p id="prevClose"></p>
+        <i class="small material-icons">attach_money</i>
+        <p id="currentP"></p>
+        <i class="small material-icons">trending_up</i>
+        <p id="highP"></p>
+        <i class="small material-icons">trending_down</i>
+        <p id="lowP"></p>
+        <i class="small material-icons">add_alert</i>
+        <p id="openP"></p>
+        <i class="small material-icons">access_time</i>
+        <p id="prevClose"></p>
+      </div>
     </div>
-    <div class="current-news">
+    <!-- end row -->
+
+    <div class="row">
+      <div class="current-news col s9 offset-s3">
         <p>this will be the div where we show the news articles</p>
+      </div>
     </div>
-    <!-- <div class="watch-list left-col-1">
-        <aside>
-        <h3>Your Watch List</h3>
-        <p>This will be the div for the saved watchlist. It will be a column on the left side.</p>
-        </aside>
-    </div> -->
-</div>
-<footer>Footer section can go here... </footer>
+
+    <!-- end row -->
+
+    <footer>Footer section can go here...</footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/css/javascript.js"></script>
-</body>
+  </body>
 </html>
