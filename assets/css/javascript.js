@@ -50,6 +50,19 @@ let stockTicker = function (event) {
             var currentPrice = document.querySelector("#currentP");
             currentPrice.textContent = `Current Price: ${data.c}`;
 
+            var highP = document.querySelector("#highP");
+            highP.textContent = `High Price: ${data.h}`;
+        
+            var lowP = document.querySelector("#lowP");
+            lowP.textContent = `Low Price: ${data.l}`;
+        
+            var openP = document.querySelector("#openP");
+            openP.textContent = `Open Price: ${data.o}`;
+        
+            var prevClose = document.querySelector("#prevClose");
+            prevClose.textContent = `Previous Close: ${data.pc}`;
+        
+
         })
         .catch((error) => {
             console.log(error);
@@ -65,8 +78,10 @@ let stockTicker = function (event) {
         })
         .then(function (data) {
             console.log('stock news', data)
-            //getStock(data);
-        })
+            getStock(data);
+
+    
+
         .catch();
 
     console.log(data[0]);
@@ -74,19 +89,6 @@ let stockTicker = function (event) {
     var currentSymbol = document.querySelector("#symbol");
     currentSymbol.textContent = `Symbol: ${search}`;
 
-
-
-    var highP = document.querySelector("#highP");
-    highP.textContent = `High Price: ${search.stockprice}`;
-
-    var lowP = document.querySelector("#lowP");
-    lowP.textContent = `Low Price: ${search.stockprice}`;
-
-    var openP = document.querySelector("#openP");
-    openP.textContent = `Open Price: ${search.stockprice}`;
-
-    var prevClose = document.querySelector("#prevClose");
-    prevClose.textContent = `Previous Close: ${search.stockprice}`;
 
     // variable to include ALL stock info?    
     var stockInfo = document.querySelector(".current-prices");
@@ -102,7 +104,7 @@ let stockTicker = function (event) {
         windEl.textContent = `Wind: ${weather.list[0].wind.speed} MPH`;
         humidEl.textContent = `Humidity: ${weather.list[0].main.humidity}%`;
       } */
-}
+
 
 // Create event listeners for the search
 searchForm.addEventListener("click", stockTicker);
@@ -111,5 +113,6 @@ searchForm.addEventListener("click", stockTicker);
 // use local storage to save watchlist stocks
 
 // Create a function for populating news articles
-// Create a button that takes you to news articles
+// Create a button that takes you to news articles 
 
+    })
