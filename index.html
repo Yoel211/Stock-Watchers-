@@ -13,19 +13,19 @@
 </head>
 <body class="bg-light flex-column">
     <header>
-        <h1> Stock Watchers! </h1>
+        <h1> Stock Watchers! </h1><i class="large material-icons">insert_chart</i>
     </header>
     <div class="container">
     <div class="p-1" >
         <p>Welcome to Stock Watchers! We are here to help create your watchlist for all your favorite stocks. We will keep the stocks you have searched in your watchlist for you. Feel free to click back in and take a look at them any time. When you go to search we will show you the current stock price and 5 latests news articles.</p>
-        <p>testing</p>
+        
     </div>
     <div class="">
         <div class="col-12 col-md-3 bg-light p-3">
             <h2 class="text-primary">Stock Watchers Search Engine</h2>
             <form id="search-form" class="mb-2">
                 <input id="search-input" type="text" placeholder="Search!">
-                <button class="btn btn-info btn-block" id="search-button">Search</button>
+                <button class="btn btn-info btn-block" id="search-button">Search<i class="material-icons right">send</i></button>
             </form>
         </div>
     </div>
@@ -36,13 +36,13 @@
     <div class="current-prices">
         <p>This will be the div of where we show the Stock Tick and prices</p>
         <p id="symbol"></p>
-        <p id="currentP"></p>
-        <p id="highP"></p>
-        <p id="lowP"></p>
-        <p id="openP"></p>
-        <p id="prevClose"></p>
+        <i class="small material-icons">attach_money</i><p id="currentP"></p>
+        <i class="small material-icons">trending_up</i><p id="highP"></p>
+        <i class="small material-icons">trending_down</i><p id="lowP"></p>
+        <i class="small material-icons">add_alert</i><p id="openP"></p>
+        <i class="small material-icons">access_time</i><p id="prevClose"></p>
     </div>
-    <div class="current">
+    <div class="current-news">
         <p>this will be the div where we show the news articles</p>
     </div>
     <div class="watch-list">
