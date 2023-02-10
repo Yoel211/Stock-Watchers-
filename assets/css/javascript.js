@@ -31,7 +31,7 @@ let stockTicker = function (event) {
         })
         .then(function (data) {
             console.log('first stock', data)
-            getStock(data);
+            //getStock(data);
         })
         .catch();
 
@@ -44,9 +44,16 @@ let stockTicker = function (event) {
         })
         .then(function (data) {
             console.log('stock price', data)
-            getStock(data);
+            // getStock(data);
+            console.log(data.c);
+            // Dan says this needs to be in the scope, so I moved it here! 
+            var currentPrice = document.querySelector("#currentP");
+            currentPrice.textContent = `Current Price: ${data.c}`;
+
         })
-        .catch();
+        .catch((error) => {
+            console.log(error);
+        });
 
     // Pulls News data for stock ticker
     fetch(
@@ -58,9 +65,43 @@ let stockTicker = function (event) {
         })
         .then(function (data) {
             console.log('stock news', data)
-            getStock(data);
+            //getStock(data);
         })
         .catch();
+
+    console.log(data[0]);
+    // comment from Jesus - append ticker data into div
+    var currentSymbol = document.querySelector("#symbol");
+    currentSymbol.textContent = `Symbol: ${search}`;
+
+
+
+    var highP = document.querySelector("#highP");
+    highP.textContent = `High Price: ${search.stockprice}`;
+
+    var lowP = document.querySelector("#lowP");
+    lowP.textContent = `Low Price: ${search.stockprice}`;
+
+    var openP = document.querySelector("#openP");
+    openP.textContent = `Open Price: ${search.stockprice}`;
+
+    var prevClose = document.querySelector("#prevClose");
+    prevClose.textContent = `Previous Close: ${search.stockprice}`;
+
+    // variable to include ALL stock info?    
+    var stockInfo = document.querySelector(".current-prices");
+
+    // function to render ALL current stock info 
+    /* function renderCurrent(weather) {
+        console.log(weather);
+        cityName.textContent = weather.city.name;
+        dateEl.textContent = `${weather.list[0].dt_txt}`;
+      
+        condEl.setAttribute("src", `http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}.png`);
+        tempEl.textContent = `Temp: ${weather.list[0].main.temp}°F`;
+        windEl.textContent = `Wind: ${weather.list[0].wind.speed} MPH`;
+        humidEl.textContent = `Humidity: ${weather.list[0].main.humidity}%`;
+      } */
 }
 
 // Create event listeners for the search
@@ -71,3 +112,4 @@ searchForm.addEventListener("click", stockTicker);
 
 // Create a function for populating news articles
 // Create a button that takes you to news articles
+
