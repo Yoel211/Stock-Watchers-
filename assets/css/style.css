@@ -62,9 +62,9 @@ input#search-input {
     line-height: 1.8;
     box-shadow: var(--boxy);
 }
-.current-prices .material-icons {
-    /* float: left; */
-}
+/* .current-prices .material-icons {
+    /* float: left; */ 
+/* } */ 
 #symbol {
     text-transform: uppercase;
 }
