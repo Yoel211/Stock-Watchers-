@@ -50,7 +50,7 @@ input#search-input {
     padding: 0 10px;
     box-shadow: var(--boxy);
 }
-.current-prices {
+.current-prices, .current-news {
     background-color: #26a69a;
     display: block;
     color: #fff;
