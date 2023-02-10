@@ -3,8 +3,6 @@ var newsApiKey = "Y05JOHE1Z7ATCKW7";
 // Create variables for ticker and price API/ Finhub
 var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
 var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
-var searchForm = document.querySelector("#search-form");
-var searchStock = document.querySelector("#searchStocks");
 
 var searchStock = document.querySelector("#searchStocks");
 

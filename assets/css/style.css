@@ -32,12 +32,12 @@ header i {
 .p-1 {
     flex-direction: column;
     color: white;
-    /* background-color: black; */
     margin-bottom: 10px;
     padding: 40px;
     padding-top: 20px;
     height: 100px;
-    text-align: center;
+    text-align: left;
+    background-color: transparent !important;
 }
 .text-primary {
     margin-bottom: 5px;
@@ -50,7 +50,7 @@ input#search-input {
     padding: 0 10px;
     box-shadow: var(--boxy);
 }
-.current-prices, .current-news {
+.current-prices, .current-news, .watch-list {
     background-color: #26a69a;
     display: block;
     color: #fff;
@@ -62,9 +62,9 @@ input#search-input {
     line-height: 1.8;
     box-shadow: var(--boxy);
 }
-.current-prices .material-icons {
-    /* float: left; */
-}
+ /* .current-prices .material-icons {
+    float: left; 
+}*/
 #symbol {
     text-transform: uppercase;
 }
@@ -72,6 +72,5 @@ footer, .p-1 {
     text-decoration: none;
     color: #fff;
     background-color: #26a69a;
-    text-align: center;
     padding: 10px;
 }
