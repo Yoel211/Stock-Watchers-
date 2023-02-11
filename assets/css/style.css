@@ -68,6 +68,12 @@ input#search-input {
   line-height: 1.8;
   box-shadow: var(--boxy);
 }
+.current-prices .material-icons {
+    float: none;
+}
+.icon-float {
+    float: left;
+}
 .current-news {
   box-shadow: none;
   background-color: transparent;
@@ -79,6 +85,8 @@ input#search-input {
 .current-news .card {
   box-shadow: var(--boxy);
   background-color: #26a69a;
+  padding: 1em;
+  border-radius: 5px;
 }
 #symbol {
   text-transform: uppercase;
