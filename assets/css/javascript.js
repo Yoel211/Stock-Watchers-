@@ -19,6 +19,7 @@ let stockTicker = function (event) {
     console.log();
   }
 
+
   console.log(search);
 
   // Stock Name Data for stocks
