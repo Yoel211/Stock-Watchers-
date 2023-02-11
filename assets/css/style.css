@@ -114,3 +114,9 @@ footer,
   width: 15%;
   height: 200%;
 }
+
+#watch-list-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
