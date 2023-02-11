@@ -3,23 +3,18 @@ var newsApiKey = "Y05JOHE1Z7ATCKW7";
 // Create variables for ticker and price API/ Finhub
 var tickerApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
 var priceApiKey = "cfe7pg9r01qp08kufpagcfe7pg9r01qp08kufpb0";
-var searchStock = document.querySelector("#searchStocks");
 
 var searchStock = document.querySelector("#searchStocks");
-
 var ticker = document.querySelector("#search-input");
-
 var searchForm = document.querySelector("#search-button");
 
-// Create a function to pull data from search button using the API ***USE ACT 24***
+// Create a function to pull data from search button using the API's
 let stockTicker = function (event) {
   event.preventDefault();
   let search = ticker.value;
   if (search) {
     console.log();
   }
-
-
   console.log(search);
 
   // Stock Name Data for stocks
@@ -29,7 +24,6 @@ let stockTicker = function (event) {
     })
     .then(function (data) {
       console.log("first stock", data);
-      //getStock(data);
     })
     .catch();
 
@@ -40,7 +34,6 @@ let stockTicker = function (event) {
     })
     .then(function (data) {
       console.log("stock price", data);
-      // getStock(data);
       console.log(data.c);
       // Dan says this needs to be in the scope, so I moved it here!
       var currentPrice = document.querySelector("#currentP");
@@ -71,27 +64,35 @@ let stockTicker = function (event) {
     })
     .then(function (data) {
       console.log("stock news", data);
-      // getStock(data);
       console.log(data.feed);
 
-     
+
       if (!data.feed) {
         console.log("No Results");
         search.innerHTML = '<h3>No results found, search again!</h3>';
       } else {
         search.innerHTML = '';
-        for ( var i = 0; i < 5; i ++ ) {
-             var articleEl = document.querySelector('.current-news')
-            var articleData = data.feed[i]
-            var articletitle = document.createElement('p')
-            var articleSummary = document.createElement('p')
-            articleSummary.textContent = 'Summary: ' + articleData.summary
+        // Creating cards for news articles
+        for (var i = 0; i < 5; i++) {
+          var articleEl = document.querySelector('.current-news')
+          var articleData = data.feed[i]
 
-            articletitle.textContent = 'Title: ' + articleData.title
-            articleEl.append(articletitle, articleSummary)
-            
+          var cardBody = document.createElement('div');
+          var articletitle = document.createElement('h5');
+          var articleSummary = document.createElement('p');
+          var linkButtonEl = document.createElement('a');
+
+          articleSummary.textContent = 'Summary: ' + articleData.summary
+          articletitle.textContent = 'Title: ' + articleData.title
+          linkButtonEl.textContent = 'Read More';
+          linkButtonEl.setAttribute('href', articleData.url);
+          linkButtonEl.classList.add('btn');
+
+          articleEl.appendChild(cardBody);
+          cardBody.appendChild(articletitle);
+          cardBody.appendChild(articleSummary);
+          cardBody.appendChild(linkButtonEl);
         }
-
       }
     })
 
@@ -104,24 +105,11 @@ let stockTicker = function (event) {
 
   // variable to include ALL stock info?
   var stockInfo = document.querySelector(".current-prices");
-
-  // function to render ALL current stock info
-  /* function renderCurrent(weather) {
-        console.log(weather);
-        cityName.textContent = weather.city.name;
-        dateEl.textContent = `${weather.list[0].dt_txt}`;
-      
-        condEl.setAttribute("src", `http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}.png`);
-        tempEl.textContent = `Temp: ${weather.list[0].main.temp}°F`;
-        windEl.textContent = `Wind: ${weather.list[0].wind.speed} MPH`;
-        humidEl.textContent = `Humidity: ${weather.list[0].main.humidity}%`;
-      } */
 };
+
 // Create event listeners for the search
 searchForm.addEventListener("click", stockTicker);
 
 // Use a fetch call to gather information from the API
 // use local storage to save watchlist stocks
 
-// Create a function for populating news articles
-// Create a button that takes you to news articles
