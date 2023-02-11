@@ -33,11 +33,9 @@ header i {
     flex-direction:column;
     color: white;
     margin-bottom: 10px;
-    padding: 40px;
-    padding-top: 20px;
+    padding: 1em !important;
     height: 100px;
     text-align: left;
-    background-color: transparent !important;
 }
 .text-primary {
     margin-bottom: 5px;
@@ -50,7 +48,7 @@ input#search-input {
     padding: 0 10px;
     box-shadow: var(--boxy);
 }
-.current-prices, .current-news, .watch-list {
+.current-prices, .current-news, .watch-list, .p-1 {
     background-color: #26a69a;
     display: block;
     color: #fff;
@@ -61,6 +59,9 @@ input#search-input {
     font-size: 18px;
     line-height: 1.8;
     box-shadow: var(--boxy);
+}
+.current-news {
+    background-color: transparent;
 }
  /* .current-prices .material-icons {
     float: left; 
@@ -94,5 +95,16 @@ footer, .p-1 {
     width: 15%;
     height: 200%;
     
+}
+.current-news {
+    box-shadow: none;
+}
+.current-news .btn {
+    background-color: #333;
+    margin: 2px 0;
+}  
+.current-news .card {
+    box-shadow: var(--boxy);
+    background-color: #26a69a;
 }
 
