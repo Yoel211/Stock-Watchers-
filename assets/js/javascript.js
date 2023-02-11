@@ -47,20 +47,29 @@ let stockTicker = function (search) {
       console.log("stock price", data);
       console.log(data.c);
       // Dan says this needs to be in the scope, so I moved it here!
+      var symbol = document.querySelector("#symbol");
+      symbol.textContent = ` ${search}`;
+
       var currentPrice = document.querySelector("#currentP");
-      currentPrice.textContent = `Current Price: ${data.c}`;
+      currentPrice.textContent = ` Current Price: ${data.c}`;
 
       var highP = document.querySelector("#highP");
-      highP.textContent = `High Price: ${data.h}`;
+      highP.textContent = ` High Price: ${data.h}`;
 
       var lowP = document.querySelector("#lowP");
-      lowP.textContent = `Low Price: ${data.l}`;
+      lowP.textContent = ` Low Price: ${data.l}`;
 
       var openP = document.querySelector("#openP");
-      openP.textContent = `Open Price: ${data.o}`;
+      openP.textContent = ` Open Price: ${data.o}`;
 
       var prevClose = document.querySelector("#prevClose");
-      prevClose.textContent = `Previous Close: ${data.pc}`;
+      prevClose.textContent = ` Previous Close: ${data.pc}`;
+
+      var iconFloat = document.querySelector(".material-icons");
+      iconFloat.classList.add('icon-float');
+
+      // currentPrice.appendChild(iconFloat);
+
     })
     .catch((error) => {
       console.log(error);
@@ -92,11 +101,12 @@ let stockTicker = function (search) {
           var articleSummary = document.createElement("p");
           var linkButtonEl = document.createElement("a");
 
-          articleSummary.textContent = "Summary: " + articleData.summary;
-          articletitle.textContent = "Title: " + articleData.title;
-          linkButtonEl.textContent = "Read More";
-          linkButtonEl.setAttribute("href", articleData.url);
-          linkButtonEl.classList.add("btn");
+          cardBody.classList.add('card');
+          articleSummary.textContent = 'Summary: ' + articleData.summary
+          articletitle.textContent = 'Title: ' + articleData.title
+          linkButtonEl.textContent = 'Read More';
+          linkButtonEl.setAttribute('href', articleData.url);
+          linkButtonEl.classList.add('btn');
 
           articleEl.appendChild(cardBody);
           cardBody.appendChild(articletitle);
