@@ -96,3 +96,8 @@ footer, .p-1 {
     
 }
 
+#watch-list-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

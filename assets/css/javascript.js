@@ -10,21 +10,23 @@ var ticker = document.querySelector("#search-input");
 var searchForm = document.querySelector("#search-form");
 
 // Create a function to pull data from search button using the API's
-let stockTicker = function (event) {
-  event.preventDefault();
-  let search = ticker.value;
+let stockTicker = function (search) {
 
   console.log(search);
   //adding local storage
 
-  if (localStorage.getItem("watch-list")) {
+  if (localStorage.getItem("watch-list") && !localStorage.getItem('watch-list').includes(search)) {
     const arrayFromStorage = JSON.parse(localStorage.getItem("watch-list"));
     arrayFromStorage.push(search);
     localStorage.setItem("watch-list", JSON.stringify(arrayFromStorage));
-  } else {
+  } 
+  else if (!localStorage.getItem('watch-list')){
+  
     localStorage.setItem("watch-list", JSON.stringify([search]));
   }
-  //   localStorage.setItem(searchval, search);
+
+
+  populateWatchlist()
 
   // Stock Name Data for stocks
   fetch(`https://finnhub.io/api/v1/search?q=${search}&token=${tickerApiKey}`)
@@ -121,7 +123,29 @@ let stockTicker = function (event) {
 };
 
 // Create event listeners for the search
-searchForm.addEventListener("submit", stockTicker);
+searchForm.addEventListener("submit", (e)=>{
+e.preventDefault()
+stockTicker(ticker.value)
+});
 
 // Use a fetch call to gather information from the API
 // use local storage to save watchlist stocks
+const watchListButtons = document.getElementById('watch-list-buttons')
+populateWatchlist()
+function populateWatchlist(){
+// read watch-list from local storage
+const arrayFromStorage = JSON.parse(localStorage.getItem("watch-list"));
+
+if (arrayFromStorage){
+  // 
+  watchListButtons.innerHTML=''
+  for (var i = 0; i < arrayFromStorage.length; i++){
+    const button = document.createElement('button')
+    button.innerText = arrayFromStorage[i]
+    button.addEventListener('click', (e)=>{
+      stockTicker(e.target.textContent)
+    })
+    watchListButtons.append(button)
+  }
+}
+}
