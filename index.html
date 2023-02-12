@@ -23,14 +23,19 @@
       <i class="large material-icons">insert_chart</i>
     </header>
     <div class="row">
-      <div class="watch-list col s2">
+      <div class="watch-list col l2 m3 s10 offset-s1">
         <h4>Your Watch List</h4>
+        <p>
+          This will be the div for the saved watchlist. It will be a column on
+          the left side.
+        </p>
         <div id="watch-list-buttons">
           
         </div>
       </div>
-      <div class="col s9">
-        <div class="col-12 col-md-3 bg-light p-3 col s6">
+      <div class="col l9 m8 s10 offset-s1 offset-m1 offset-l1">
+        
+        <div class="bg-light p-3 col l5 m10 s10">
           <h4 class="text-primary">Stock Watchers Search Engine</h4>
           <form id="search-form" class="mb-2">
             <input id="search-input" type="text" placeholder="Search!" />
@@ -39,7 +44,7 @@
             </button>
           </form>
         </div>
-        <div class="p-1 col s6">
+        <div class="p-1 col l5 m10 s12">
           <p>
             Welcome to Stock Watchers! We are here to help create your watchlist
             for all your favorite stocks. We will keep the stocks you have
@@ -51,7 +56,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="current-prices col s8 offset-s3">
+      <div class="current-prices col l8 m7 s10 offset-l3 offset-m4 offset-s1">
         <h4 id="symbol">Your Stock Information</h4>
         <i class="small material-icons">attach_money</i>
         <p id="currentP"></p>
@@ -66,11 +71,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="current-news col s8 offset-s3">
+      <div class="current-news col l8 m7 s10 offset-l3 offset-m4 offset-s1">
         <p>this will be the div where we show the news articles</p>
       </div>
     </div>
-    <footer>Copyright 2023 - Stock Watchers! </footer>
+    <footer>&copy; Copyright 2023 - Stock Watchers! </footer>
+    <!-- JS script for Materialize CSS framework -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/javascript.js"></script>
   </body>

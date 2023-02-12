@@ -27,12 +27,15 @@ header {
   font-size: 40px;
   display: flex;
   flex-direction: column;
-  /* adding stock icon */
+  /* adding main stock icon to header */
   flex-flow: nowrap;
   justify-content: space-evenly;
 }
 header i {
   margin: auto 0;
+}
+.bg-light {
+    margin: 1em 0;;
 }
 .p-1 {
   flex-direction: column;
@@ -82,6 +85,9 @@ input#search-input {
   background-color: #333;
   margin: 2px 0;
 }
+.current-news .btn:hover {
+    background-color: #666;
+}
 .current-news .card {
   box-shadow: var(--boxy);
   background-color: #26a69a;
@@ -90,13 +96,6 @@ input#search-input {
 }
 #symbol {
   text-transform: uppercase;
-}
-footer,
-.p-1 {
-  text-decoration: none;
-  color: #fff;
-  background-color: #26a69a;
-  padding: 10px;
 }
 .left-col-1 {
   font-size: 2ch;
@@ -114,9 +113,18 @@ footer,
   width: 15%;
   height: 200%;
 }
+footer,
+.p-1 {
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  padding: 10px;
+}
+/* Custom media queries go here */
 
-#watch-list-buttons{
+#watch-list-buttons {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
