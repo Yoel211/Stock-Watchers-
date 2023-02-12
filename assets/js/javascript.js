@@ -54,10 +54,8 @@ let stockTicker = function (event) {
       var prevClose = document.querySelector("#prevClose");
       prevClose.textContent = ` Previous Close: ${data.pc}`;
 
-      var iconFloat = document.querySelector(".material-icons");
-      iconFloat.classList.add('icon-float');
-
-      // currentPrice.appendChild(iconFloat);
+      var iconFloat = document.getElementsByClassName("material-icons");
+      iconFloat.classList.add("icon-float");
 
     })
     .catch((error) => {
