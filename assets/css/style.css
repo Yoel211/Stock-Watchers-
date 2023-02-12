@@ -121,3 +121,10 @@ footer,
   padding: 10px;
 }
 /* Custom media queries go here */
+
+#watch-list-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
