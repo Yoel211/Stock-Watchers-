@@ -35,15 +35,15 @@ header i {
   margin: auto 0;
 }
 #watch-list-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 #watch-list-buttons button {
-    cursor: pointer;
+  cursor: pointer;
 }
 .bg-light {
-    margin: 1em 0;;
+  margin: 1em 0;
 }
 .p-1 {
   flex-direction: column;
@@ -80,18 +80,20 @@ input#search-input {
   box-shadow: var(--boxy);
 }
 .current-prices {
-    display: flex;
-    flex-flow: row;
-    padding: 2em !important;
-    margin-top: 0;
-    float: none !important; 
-} 
+  display: flex;
+  flex-flow: row;
+  padding: 2em !important;
+  margin-top: 0;
+  float: none !important;
+  line-height: 1.2;
+  align-items: center;
+}
 .current-prices .material-icons {
-    float: none;
-    margin: 5px;
+  float: none;
+  margin: 5px;
 }
 .icon-float {
-    float: left !important;
+  float: left !important;
 }
 .current-news {
   box-shadow: none;
@@ -102,7 +104,7 @@ input#search-input {
   margin: 2px 0;
 }
 .current-news .btn:hover {
-    background-color: #666;
+  background-color: #666;
 }
 .current-news .card {
   box-shadow: var(--boxy);
@@ -141,8 +143,9 @@ footer,
 }
 /* Custom media queries go here */
 @media screen and (max-width: 992px) {
-    .current-prices {
-        flex-flow: column;
+  .current-prices {
+    flex-flow: column;
+    align-items: flex-start;
   }
   .current-prices .small {
     float: left;
