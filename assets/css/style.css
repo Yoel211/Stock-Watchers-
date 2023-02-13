@@ -144,4 +144,11 @@ footer,
     .current-prices {
         flex-flow: column;
   }
+  .current-prices .small {
+    float: left;
+    width: 30px;
+  }
+  .current-prices p {
+    width: 50%;
+  }
 }
