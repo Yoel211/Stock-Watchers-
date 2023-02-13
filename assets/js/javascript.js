@@ -65,8 +65,10 @@ let stockTicker = function (search) {
       var prevClose = document.querySelector("#prevClose");
       prevClose.textContent = ` Previous Close: ${data.pc}`;
 
-      var iconFloat = document.getElementsByClassName("material-icons");
+      //var iconFloat = document.querySelectorAll(".material-icons");
+      var iconFloat = document.getElementsByClassName("small");
       iconFloat.classList.add("icon-float");
+      //iconFloat.setAttribute("class", "icon-float");
 
     })
     .catch((error) => {
@@ -104,6 +106,7 @@ let stockTicker = function (search) {
           articletitle.textContent = 'Title: ' + articleData.title
           linkButtonEl.textContent = 'Read More';
           linkButtonEl.setAttribute('href', articleData.url);
+          linkButtonEl.setAttribute('target', '_blank');
           linkButtonEl.classList.add('btn');
 
           articleEl.appendChild(cardBody);

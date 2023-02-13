@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Stock Watchers!</title>
   </head>
-  <body class="bg-light flex-column">
+  <body class="flex-column">
     <header>
       <h1>Stock Watchers!</h1>
       <i class="large material-icons">insert_chart</i>
@@ -25,17 +25,10 @@
     <div class="row">
       <div class="watch-list col l2 m3 s10 offset-s1">
         <h4>Your Watch List</h4>
-        <p>
-          This will be the div for the saved watchlist. It will be a column on
-          the left side.
-        </p>
-        <div id="watch-list-buttons">
-          
-        </div>
+        <div id="watch-list-buttons"></div>
       </div>
-      
+
       <div class="col l9 m8 s10 offset-s1 offset-m1 offset-l1">
-        
         <div class="bg-light p-3 col l5 m10 s10">
           <h4 class="text-primary">Stock Watchers Search Engine</h4>
           <form id="search-form" class="mb-2">
@@ -54,11 +47,8 @@
             the current stock price and 5 latests news articles.
           </p>
         </div>
-
-        
       </div>
-    
-    <!--<div class="row">-->
+
       <div class="current-prices col l8 m7 s10 offset-l3 offset-m4 offset-s1">
         <h4 id="symbol">Your Stock Information</h4>
         <i class="small material-icons">attach_money</i>
@@ -72,16 +62,13 @@
         <i class="small material-icons">access_time</i>
         <p id="prevClose"></p>
       </div>
-    <!--</div> close row
-    <div class="row">-->
-      <div class="current-news col l8 m7 s10 offset-l3 offset-m4 offset-s1">
-        <p>this will be the div where we show the news articles</p>
-      </div>
 
-    </div><!-- close MAIN row ???? /-->
-    
-    <!--</div> close div -->
-    <footer>&copy; Copyright 2023 - Stock Watchers! </footer>
+      <div class="current-news col l8 m7 s10 offset-l3 offset-m4 offset-s1">
+        <h4>Latest News</h4>
+      </div>
+    </div>
+
+    <footer>&copy; Copyright 2023 - Stock Watchers!</footer>
     <!-- JS script for Materialize CSS framework -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/javascript.js"></script>
