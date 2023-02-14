@@ -27,12 +27,23 @@ header {
   font-size: 40px;
   display: flex;
   flex-direction: column;
-  /* adding stock icon */
+  /* adding main stock icon to header */
   flex-flow: nowrap;
   justify-content: space-evenly;
 }
 header i {
   margin: auto 0;
+}
+#watch-list-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#watch-list-buttons button {
+  cursor: pointer;
+}
+.bg-light {
+  margin: 1em 0;
 }
 .p-1 {
   flex-direction: column;
@@ -68,6 +79,22 @@ input#search-input {
   line-height: 1.8;
   box-shadow: var(--boxy);
 }
+.current-prices {
+  display: flex;
+  flex-flow: row;
+  padding: 2em !important;
+  margin-top: 0;
+  float: none !important;
+  line-height: 1.2;
+  align-items: center;
+}
+.current-prices .material-icons {
+  float: none;
+  margin: 5px;
+}
+.icon-float {
+  float: left !important;
+}
 .current-news {
   box-shadow: none;
   background-color: transparent;
@@ -76,12 +103,36 @@ input#search-input {
   background-color: #333;
   margin: 2px 0;
 }
+.current-news .btn:hover {
+  background-color: #666;
+}
 .current-news .card {
   box-shadow: var(--boxy);
   background-color: #26a69a;
+  padding: 1em;
+  border-radius: 5px;
 }
 #symbol {
   text-transform: uppercase;
+}
+.left-col-1 {
+  font-size: 2ch;
+}
+/* trying to put watch-list on the top left */
+.watch-list {
+  /* background-color: red;
+  padding: 50px; */
+  color: white;
+  margin: 0px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  float: left;
+  width: 15%;
+  height: 200%;
+  margin-top: 1em;
+  background: #26a69a;
+  padding-bottom: 1em !important;
 }
 footer,
 .p-1 {
@@ -90,19 +141,17 @@ footer,
   background-color: #26a69a;
   padding: 10px;
 }
-.left-col-1 {
-  font-size: 2ch;
-}
-/* trying to put watch-list on the top left */
-.watch-list {
-  background-color: red;
-  color: white;
-  /* padding: 50px; */
-  margin: 0px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  text-align: center;
-  float: left;
-  width: 15%;
-  height: 200%;
+/* Custom media queries go here */
+@media screen and (max-width: 992px) {
+  .current-prices {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .current-prices .small {
+    float: left;
+    width: 30px;
+  }
+  .current-prices p {
+    width: 50%;
+  }
 }
