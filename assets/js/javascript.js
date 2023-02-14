@@ -82,6 +82,7 @@ let stockTicker = function (event) {
           var articleSummary = document.createElement('p');
           var linkButtonEl = document.createElement('a');
 
+          cardBody.classList.add('card');
           articleSummary.textContent = 'Summary: ' + articleData.summary
           articletitle.textContent = 'Title: ' + articleData.title
           linkButtonEl.textContent = 'Read More';
