@@ -118,8 +118,6 @@ let stockTicker = function (search) {
     })
 
     .catch();
-
-  console.log(data[0]);
   // comment from Jesus - append ticker data into div
   var currentSymbol = document.querySelector("#symbol");
   currentSymbol.textContent = `Symbol: ${search}`;
