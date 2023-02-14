@@ -34,8 +34,16 @@ header {
 header i {
   margin: auto 0;
 }
+#watch-list-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#watch-list-buttons button {
+  cursor: pointer;
+}
 .bg-light {
-    margin: 1em 0;;
+  margin: 1em 0;
 }
 .p-1 {
   flex-direction: column;
@@ -71,11 +79,21 @@ input#search-input {
   line-height: 1.8;
   box-shadow: var(--boxy);
 }
+.current-prices {
+  display: flex;
+  flex-flow: row;
+  padding: 2em !important;
+  margin-top: 0;
+  float: none !important;
+  line-height: 1.2;
+  align-items: center;
+}
 .current-prices .material-icons {
-    float: none;
+  float: none;
+  margin: 5px;
 }
 .icon-float {
-    float: left;
+  float: left !important;
 }
 .current-news {
   box-shadow: none;
@@ -86,7 +104,7 @@ input#search-input {
   margin: 2px 0;
 }
 .current-news .btn:hover {
-    background-color: #666;
+  background-color: #666;
 }
 .current-news .card {
   box-shadow: var(--boxy);
@@ -102,9 +120,9 @@ input#search-input {
 }
 /* trying to put watch-list on the top left */
 .watch-list {
-  background-color: red;
+  /* background-color: red;
+  padding: 50px; */
   color: white;
-  /* padding: 50px; */
   margin: 0px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -112,6 +130,9 @@ input#search-input {
   float: left;
   width: 15%;
   height: 200%;
+  margin-top: 1em;
+  background: #26a69a;
+  padding-bottom: 1em !important;
 }
 footer,
 .p-1 {
@@ -121,10 +142,16 @@ footer,
   padding: 10px;
 }
 /* Custom media queries go here */
-
-#watch-list-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+@media screen and (max-width: 992px) {
+  .current-prices {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .current-prices .small {
+    float: left;
+    width: 30px;
+  }
+  .current-prices p {
+    width: 50%;
+  }
 }
-
