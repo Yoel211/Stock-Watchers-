@@ -19,9 +19,9 @@ let stockTicker = function (search) {
     const arrayFromStorage = JSON.parse(localStorage.getItem("watch-list"));
     arrayFromStorage.push(search);
     localStorage.setItem("watch-list", JSON.stringify(arrayFromStorage));
-  } 
-  else if (!localStorage.getItem('watch-list')){
-  
+  }
+  else if (!localStorage.getItem('watch-list')) {
+
     localStorage.setItem("watch-list", JSON.stringify([search]));
   }
 
@@ -92,8 +92,9 @@ let stockTicker = function (search) {
       } else {
         search.innerHTML = "";
         // Creating cards for news articles
+        var articleEl = document.querySelector(".current-news");
+        articleEl.textContent = ''
         for (var i = 0; i < 5; i++) {
-          var articleEl = document.querySelector(".current-news");
           var articleData = data.feed[i];
 
           var cardBody = document.createElement("div");
@@ -132,29 +133,29 @@ let stockTicker = function (search) {
 };
 
 // Create event listeners for the search
-searchForm.addEventListener("submit", (e)=>{
-e.preventDefault()
-stockTicker(ticker.value)
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+  stockTicker(ticker.value)
 });
 
 // Use a fetch call to gather information from the API
 // use local storage to save watchlist stocks
 const watchListButtons = document.getElementById('watch-list-buttons')
 populateWatchlist()
-function populateWatchlist(){
-// read watch-list from local storage
-const arrayFromStorage = JSON.parse(localStorage.getItem("watch-list"));
+function populateWatchlist() {
+  // read watch-list from local storage
+  const arrayFromStorage = JSON.parse(localStorage.getItem("watch-list"));
 
-if (arrayFromStorage){
-  // 
-  watchListButtons.innerHTML=''
-  for (var i = 0; i < arrayFromStorage.length; i++){
-    const button = document.createElement('button')
-    button.innerText = arrayFromStorage[i]
-    button.addEventListener('click', (e)=>{
-      stockTicker(e.target.textContent)
-    })
-    watchListButtons.append(button)
+  if (arrayFromStorage) {
+    // 
+    watchListButtons.innerHTML = ''
+    for (var i = 0; i < arrayFromStorage.length; i++) {
+      const button = document.createElement('button')
+      button.innerText = arrayFromStorage[i]
+      button.addEventListener('click', (e) => {
+        stockTicker(e.target.textContent)
+      })
+      watchListButtons.append(button)
+    }
   }
-}
 }
