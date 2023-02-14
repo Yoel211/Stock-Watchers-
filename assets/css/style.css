@@ -113,7 +113,7 @@ input#search-input {
   padding: 1em;
   border-radius: 5px;
 }
-#symbol {
+#symbol, #watch-list-buttons button {
   text-transform: uppercase;
 }
 .left-col-1 {
