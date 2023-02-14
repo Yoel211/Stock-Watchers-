@@ -59,6 +59,7 @@ header i {
 }
 input#search-input {
   background-color: #fff;
+  width: 90%;
   max-width: 300px;
   border-radius: 5px;
   padding: 0 10px;
@@ -120,8 +121,13 @@ input#search-input {
 }
 /* trying to put watch-list on the top left */
 .watch-list {
-  /* background-color: red;
-  padding: 50px; */
+  background: rgb(45, 19, 214);
+  background: linear-gradient(
+    0deg,
+    rgb(98, 137, 243) 10%,
+    rgb(21, 55, 223) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
   color: white;
   margin: 0px;
   margin-bottom: 20px;
@@ -131,7 +137,7 @@ input#search-input {
   width: 15%;
   height: 200%;
   margin-top: 1em;
-  background: #26a69a;
+  /* background: #26a69a; */
   padding-bottom: 1em !important;
 }
 footer,
