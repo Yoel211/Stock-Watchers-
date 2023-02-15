@@ -25,11 +25,15 @@ Finnhub was used for searching with the stock ticker as well as getting the curr
 AlphaVantage was use to search for the 5 most recent articles.
 (https://www.alphavantage.co/documentation/)
 
+### CSS Framework Used for Project
+Materialize CSS
+(https://materializecss.com/)
+
 ### Screenshots of Website
 ![Home Page of Application](./assets/Images/Stock%20Watchers%201.png "Home Page of Application")
 ![Current Stock and News Articles](./assets/Images/Stock%20Watchers%202.png "Current Stock and News Articles")
 ![Watch List](./assets/Images/Stock%20Watchers%203.png "Watch List")
 
-[Github for Stock Watchers!](https://github.com/Yoel211/Stock-Watchers-)
+[Deployed Application for Stock Watchers!](https://yoel211.github.io/Stock-Watchers-/)
 
 Created in collaboration with Johnny McGown, Katherine Reiner, Jesus Salazar, and Yoel Regalado
