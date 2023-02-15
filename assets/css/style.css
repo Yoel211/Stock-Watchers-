@@ -96,9 +96,13 @@ input#search-input {
 .icon-float {
   float: left !important;
 }
+.news-header {
+  color: #fff;
+}
 .current-news {
   box-shadow: none;
   background-color: transparent;
+  margin-top: 0;
 }
 .current-news .btn {
   background-color: #333;
